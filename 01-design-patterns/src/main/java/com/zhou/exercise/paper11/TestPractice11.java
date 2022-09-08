@@ -1,6 +1,7 @@
 package com.zhou.exercise.paper11;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -11,19 +12,24 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class TestPractice11 {
 
-    private List<String> wrongMethod(FooService fooService, Integer i, String s, String t) {
-        System.out.printf("result %s %s %s %s", i + 1, s.equals("OK"), s.equals(t),
-                new ConcurrentHashMap<String, String>().put(null, null));
+  private List<String> wrongMethod(FooService fooService, Integer i, String s, String t) {
+    System.out.printf("result %s %s %s %s", i + 1, s.equals("OK"), s.equals(t),
+        new ConcurrentHashMap<String, String>().put(null, null));
 
-        if (fooService.getBarService().getBar().equals("OK")) {
-            System.out.println("OK");
-        }
-
-        return null;
+    if (fooService.getBarService().getBar().equals("OK")) {
+      System.out.println("OK");
     }
 
+    return null;
+  }
 
-    public static void main(String[] args) {
 
-    }
+  public static void main(String[] args) {
+    FooService fooService = new FooService();
+    Optional.ofNullable(fooService)
+        .map(FooService::getBarService)
+        .filter(barService -> "OK".equals(barService.getBar()))
+        .ifPresent(x -> System.out.println(x));
+
+  }
 }

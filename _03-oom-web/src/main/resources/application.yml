@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: jdbc:mysql://10.120.101.147:3305/metadata?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true
+    username: work
+    password: 00@yiMapV#
+    driver-class-name: com.mysql.jdbc.Driver
