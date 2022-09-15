@@ -1,4 +1,4 @@
-package com.zhou.create.adapter;
+package com.zhou.structural.adapter;
 
 /**
  * @Author zhoubing

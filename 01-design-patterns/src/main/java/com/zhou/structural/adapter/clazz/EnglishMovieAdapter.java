@@ -1,7 +1,7 @@
-package com.zhou.create.adapter.clazz;
+package com.zhou.structural.adapter.clazz;
 
-import com.zhou.create.adapter.EnglishTranslator;
-import com.zhou.create.adapter.Player;
+import com.zhou.structural.adapter.EnglishTranslator;
+import com.zhou.structural.adapter.Player;
 
 /**
  *
